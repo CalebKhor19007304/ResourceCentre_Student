@@ -164,14 +164,24 @@ public class ResourceCentreTest {
 	
 	@Test
 	public void doReturnCamcorderTest() {
-		//fail("Not yet implemented");
-		// write your code here
+        // Done by Hazim
+        //fail("Not yet implemented");
+        // write your code here
+        assertNotNull("Test if there is valid Camcorder arraylist to return to", camcorderList);
+        ResourceCentre.doReturnCamcorder(camcorderList, cc1.getAssetTag());
+        assertTrue("Test if item has been returned", cc1.getIsAvailable());
+        assertTrue("Test if item has been returned", cc2.getIsAvailable());
 		
 	}
 	@Test
 	public void doReturnChromebookTest() {
-		//fail("Not yet implemented");
-		// write your code here
+        // Done by Hazim
+        //fail("Not yet implemented");
+        // write your code here
+        assertNotNull("Test if there is valid Chromebook arraylist to return to", chromebookList);
+        ResourceCentre.doReturnChromebook(chromebookList, cb1.getAssetTag());
+        assertTrue("Test if item has been returned", cb1.getIsAvailable());
+        assertTrue("Test if item has been returned", cb2.getIsAvailable());
 	}
 	
 	@After
