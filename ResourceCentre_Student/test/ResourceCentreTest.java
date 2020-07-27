@@ -78,10 +78,28 @@ public class ResourceCentreTest {
 		assertEquals("Check that ViewAllCamcorderlist", testOutput, allCamcorder);
 		
 	}
+	//Done by Elayne
 	@Test
 	public void retrieveAllChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+		//test if the list of chromebook retrieved from the SourceCentre is empty
+		String allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
+		String testOutput = "";
+		
+		
+		//Given an empty list, after adding 2 items, test if the size of the list is 2
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		ResourceCentre.addChromebook(chromebookList, cb2);
+
+
+		//test if the expected output string same as the list of chromebook retrieved from the SourceCentre
+		allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
+
+		testOutput = String.format("%-10s %-30s %-10s %-10s %-20s\n","CB0011", "My Google Chromebook 1st","","", "Mac OS");
+		testOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n","CB0012", "SAMSUNG Chromebook 4+","","", "Win 10");
+
 	}
 
 	@Test
